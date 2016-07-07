@@ -2,7 +2,7 @@
   "name": "vue-cli-template-nd",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "A full-featured neodymium setup for building an app with electron.",
+  "description": "A full-featured neodymium stack setup.",
   "scripts": {
     "docs": "cd docs && gitbook serve",
     "deploy-docs": "bash ./deploy-docs.sh"

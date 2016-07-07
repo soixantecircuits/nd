@@ -1,6 +1,6 @@
 # neodymium template
 
-> A full-featured neodymium setup for building an app with electron.
+> A full-featured neodymium stack setup.
 
 ## Documentation
 
@@ -54,4 +54,4 @@ vue init username/repo my-project
 
 ### Credits
 
-This is originally a fork of the [webpack](https://github.com/vuejs-templates/webpack) template.
+This is originally a fork of the [webpack](https://github.com/vuejs-templates/webpack) template. Most credit goes to them! 👏
