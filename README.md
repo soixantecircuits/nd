@@ -1,10 +1,10 @@
-# vue-webpack-boilerplate
+# neodymium template
 
-> A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
+> A full-featured neodymium setup for building an app with electron.
 
 ## Documentation
 
-Common topics are discussed in the [docs](http://vuejs-templates.github.io/webpack). Make sure to read it!
+Common topics are discussed in the [docs](http://soixantecircuits.github.io/nd). Make sure to read it!
 
 ## Usage
 
@@ -12,7 +12,7 @@ This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It
 
 ``` bash
 $ npm install -g vue-cli
-$ vue init webpack my-project
+$ vue init nd my-project
 $ cd my-project
 $ npm install
 $ npm run dev
@@ -51,3 +51,7 @@ You can fork this repo to create your own boilerplate, and use it with `vue-cli`
 ``` bash
 vue init username/repo my-project
 ```
+
+### Credits
+
+This is originally a fork of the [webpack](https://github.com/vuejs-templates/webpack) template.
