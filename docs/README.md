@@ -1,11 +1,8 @@
-# Introduction
+# nd
 
-This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and `vue-loader`. Make sure to also read [`vue-loader`'s documentation](http://vuejs.github.io/vue-loader/index.html) for common workflow recipes.
+## Introduction
 
-If you just want to try out `vue-loader` or whip out a quick prototype, use the [webpack-simple](https://github.com/vuejs-templates/webpack-simple) template instead.
-
-## Prerequisites
-
+Neodymium stack is targeted towards single page applications with [state management](http://vuex.vuejs.org/en/intro.html), often used with [electron](http://electron.atom.io/).
 In order to fully enjoy working with the nd stack, you **need** to have read these docs ~~entirely~~ 🤓, preferably in that order:
 
 - [ES2015 syntax](https://babeljs.io/docs/learn-es2015/)
@@ -19,6 +16,8 @@ In order to fully enjoy working with the nd stack, you **need** to have read the
 You will also need to have:
 
 - [ESLint](http://eslint.org/) installed.
+
+If you just want to try out `vue-loader` or whip out a quick prototype, use the [webpack-simple](https://github.com/vuejs-templates/webpack-simple) template instead.
 
 ## Quickstart
 
