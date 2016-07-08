@@ -55,3 +55,5 @@ vue init username/repo my-project
 ### Credits
 
 This is originally a fork of the [webpack](https://github.com/vuejs-templates/webpack) template. Most credit goes to them! 👏
+
+The neodymium stack was originally designed as a yeoman generator. You can take a look [here](https://github.com/soixantecircuits/neodymium).
