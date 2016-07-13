@@ -16,6 +16,11 @@ module.exports = {
     productionGzip: false,
     productionGzipExtensions: ['js', 'css']
   },
+  {{#electron}}
+  electron: {
+    assetsPublicPath: path.resolve(__dirname, '../dist'),
+  },
+  {{/electron}}
   dev: {
     env: require('./dev.env'),
     port: 8080,

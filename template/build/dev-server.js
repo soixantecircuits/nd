@@ -62,4 +62,5 @@ module.exports = app.listen(port, function (err) {
     return
   }
   console.log('Listening at http://localhost:' + port + '\n')
+  {{#electron}}console.log('To test in electron:\nopen a new terminal window and run\n\n  npm run electron'){{/electron}}
 })

@@ -15,6 +15,10 @@
       "type": "string",
       "message": "Author"
     },
+    "electron": {
+      "type": "confirm",
+      "message": "Setup Electron support (might break browser support)?"
+    },
     "unit": {
       "type": "confirm",
       "message": "Setup unit tests with Karma + Mocha?"
@@ -26,7 +30,9 @@
   },
   "filters": {
     "test/unit/**/*": "unit",
-    "test/e2e/**/*": "e2e"
+    "test/e2e/**/*": "e2e",
+    "build/webpack.electron.conf.js": "electron",
+    "electron/**/*": "electron"
   },
-  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://soixantecircuits.github.io/nd"
+  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev{{#electron}}\n  npm run electron # in another terminal window{{/electron}}\n\nDocumentation can be found at https://soixantecircuits.github.io/nd"
 }

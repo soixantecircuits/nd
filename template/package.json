@@ -7,6 +7,10 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    {{#electron}}
+    "electron": "export NODE_ENV=\"dev\"; ./node_modules/.bin/electron .",
+    "build-electron": "node build/build-electron.js",
+    {{/electron}}
     {{#unit}}
     "unit": "karma start test/unit/karma.conf.js --single-run",
     {{/unit}}
@@ -16,6 +20,9 @@
     "test": "{{#unit}}npm run unit{{/unit}}{{#unit}}{{#e2e}} && {{/e2e}}{{/unit}}{{#e2e}}npm run e2e{{/e2e}}",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
+  {{#electron}}
+  "main": "electron/main.js",
+  {{/electron}}
   "dependencies": {
     "vue": "^1.0.21",
     "babel-runtime": "^6.0.0"
@@ -28,6 +35,10 @@
     "babel-preset-stage-2": "^6.0.0",
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.23.0",
+    {{#electron}}
+    "electron-debug": "^1.0.1",
+    "electron-prebuilt": "1.2.6",
+    {{/electron}}
     "eslint": "^2.10.2",
     "eslint-friendly-formatter": "^2.0.5",
     "eslint-loader": "^1.3.0",
