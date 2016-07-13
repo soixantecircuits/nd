@@ -11,7 +11,16 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
+# launch electron and open a window at localhost:8080
+# you must have run the `npm run dev` command in an other terminal window
+npm run electron
+
+# build for production with minification.
+{{#if electron}}
+# build will be targeted at web browser.
+{{else}}
+# build will be targeted at electron.
+{{/if}}
 npm run build
 
 # run unit tests

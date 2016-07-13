@@ -16,6 +16,10 @@ $ vue init soixantecircuits/nd my-project
 $ cd my-project
 $ npm install
 $ npm run dev
+
+# if you picked Electron support,
+# in another terminal window
+$ npm run electron
 ```
 
 ## What's Included

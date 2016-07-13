@@ -5,6 +5,7 @@
 - [Pre-Processors](pre-processors.md)
 - [Handling Static Assets](static.md)
 - [Environment Variables](env.md)
+- [Electron support](electron.md)
 - [Integrate with Backend Framework](backend.md)
 - [API Proxying During Development](proxy.md)
 - [Unit Testing](unit.md)

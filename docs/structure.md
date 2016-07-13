@@ -4,9 +4,11 @@
 .
 ├── build/                      # webpack config files
 │   └── ...
-├── config/                     
+├── config/
 │   ├── index.js                # main project config
 │   └── ...
+├── electron/
+│   └── main.js                 # electron entry point
 ├── src/
 │   ├── main.js                 # app entry file
 │   ├── App.vue                 # main app component
@@ -39,6 +41,10 @@ This directory holds the actual configurations for both the development server a
 ### `config/index.js`
 
 This is the main configuration file that exposes some of the most common configuration options for the build setup. See [API Proxying During Development](proxy.md) and [Integrating with Backend Framework](backend.md) for more details.
+
+### `electron/`
+
+This directory holds all the electron related stuffs. The `main.js` file is the entry point for Electron, as specified in the `main` property of your `package.json`. See [Electron support](electron.md) for more details.
 
 ### `src/`
 

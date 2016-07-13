@@ -12,14 +12,22 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - Lint-on-save with ESLint
 - Source maps
 
+### `npm run electron`
+
+> Starts Electron and open a window at your local dev server.
+
+- Adds some developper friendly features when working in a dev environment:
+  - Auto opens the devtools.
+
 ### `npm run build`
 
-> Build assets for production. See [Integrating with Backend Framework](backend.md) for more details.
+> Build assets for production. See [Integrating with Backend Framework](backend.md) and [Electron support](electron.md) for more details.
 
 - JavaScript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2).
 - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
 - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
 - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
+- If you pick [Electron support](electron.md), build will be setup to work over `file://` and have access to [electron built-in modules](https://github.com/webpack/webpack/blob/3d5dc1a7bf8c7e44acb89d3f0c4b357df6a0ac0a/lib/WebpackOptionsApply.js#L122).
 - Also see [deployment notes](#how-do-i-deploy-built-assets-with-my-backend-framework).
 
 ### `npm run unit`
