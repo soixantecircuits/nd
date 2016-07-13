@@ -9,7 +9,6 @@
     "build": "node build/build.js",
     {{#electron}}
     "electron": "export NODE_ENV=\"dev\"; ./node_modules/.bin/electron .",
-    "build-electron": "node build/build-electron.js",
     {{/electron}}
     {{#unit}}
     "unit": "karma start test/unit/karma.conf.js --single-run",

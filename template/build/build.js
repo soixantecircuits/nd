@@ -9,12 +9,21 @@ var webpack = require('webpack')
 var webpackConfig = require('./webpack.prod.conf')
 
 console.log(
+  {{#if electron}}
+  '  Tip:\n' +
+  '  Built files are not meant to be served over an HTTP server.\n' +
+  '  You have to open index.html over file://\n'
+  {{else}}
   '  Tip:\n' +
   '  Built files are meant to be served over an HTTP server.\n' +
   '  Opening index.html over file:// won\'t work.\n'
+  {{/if}}
 )
 
-var spinner = ora('building for production...')
+var spinner = ora({
+  text:'building for production...',
+  spinner: 'monkey'
+})
 spinner.start()
 
 var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)

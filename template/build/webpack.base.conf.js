@@ -12,6 +12,9 @@ module.exports = {
     publicPath: config.build.assetsPublicPath,
     filename: '[name].js'
   },
+  {{#electron}}
+  target: 'electron-renderer',
+  {{/electron}}
   resolve: {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],

@@ -7,7 +7,11 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
+    {{#if electron}}
+    assetsPublicPath: path.resolve(__dirname, '../dist'),
+    {{else}}
     assetsPublicPath: '/',
+    {{/if}}
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -16,11 +20,6 @@ module.exports = {
     productionGzip: false,
     productionGzipExtensions: ['js', 'css']
   },
-  {{#electron}}
-  electron: {
-    assetsPublicPath: path.resolve(__dirname, '../dist'),
-  },
-  {{/electron}}
   dev: {
     env: require('./dev.env'),
     port: 8080,

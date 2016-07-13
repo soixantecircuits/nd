@@ -11,6 +11,11 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 })
 
 module.exports = merge(baseWebpackConfig, {
+  {{#electron}}
+  output: {
+    publicPath: '/'
+  },
+  {{/electron}}
   module: {
     loaders: utils.styleLoaders()
   },
