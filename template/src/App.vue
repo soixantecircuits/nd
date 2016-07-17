@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <menu></menu>
-
     <p>
       Welcome to neodymium!
     </p>
