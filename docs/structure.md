@@ -1,5 +1,9 @@
 # Project Structure
 
+> tldr; you write your app into `src/` and `electron/`. Tests go in `test/`. Avoid other directories and root.
+
+<br />
+
 ``` bash
 .
 ├── build/                      # webpack config files
