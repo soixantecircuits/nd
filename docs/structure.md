@@ -9,6 +9,8 @@
 │   └── ...
 ├── electron/
 │   └── main.js                 # electron entry point
+├── releases/                   # destination folder for your electron packaged apps
+│   └── ...
 ├── src/
 │   ├── main.js                 # app entry file
 │   ├── App.vue                 # main app component
@@ -17,9 +19,9 @@
 │   ├── assets/                 # module assets (processed by webpack)
 │   |   └── ...
 |   └── vuex
-|       ├── store.js     # exports the store (with initial state and mutations)
-|       ├── getters.js     # exports all getters
-|       └── actions.js   # exports all actions
+|       ├── store.js            # exports the store (with initial state and mutations)
+|       ├── getters.js          # exports all getters
+|       └── actions.js          # exports all actions
 ├── static/                     # pure static assets (directly copied)
 ├── test/
 │   └── unit/                   # unit tests
@@ -49,6 +51,10 @@ This is the main configuration file that exposes some of the most common configu
 ### `electron/`
 
 This directory holds all the electron related stuffs. The `main.js` file is the entry point for Electron, as specified in the `main` property of your `package.json`. See [Electron support](electron.md) for more details.
+
+### `releases/`
+
+This is where your packaged app will resides. Naming convention for packaged folders is `{project-name}-{platform}-{arch}` See [Electron support](electron.md) for more details.
 
 ### `src/`
 

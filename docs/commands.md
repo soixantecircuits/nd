@@ -30,6 +30,21 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - If you pick [Electron support](electron.md), build will be setup to work over `file://` and have access to [electron built-in modules](https://github.com/webpack/webpack/blob/3d5dc1a7bf8c7e44acb89d3f0c4b357df6a0ac0a/lib/WebpackOptionsApply.js#L122).
 - Also see [deployment notes](#how-do-i-deploy-built-assets-with-my-backend-framework).
 
+### `npm run package [-- -p {platform}]`
+
+> Package your app for distribution with [electron-packager](https://github.com/electron-userland/electron-packager).
+
+- `-- -p {platform}` flag is optionnal and will determine the destination platform. Default is your current.
+  - `linux` for Linux.
+  - `darwin` for OS X.
+  - `win` for Windows.
+  - `all` for the three.
+- Portable version of your app (NodeJS and WebKit embedded).
+- Package for Windows/OS X/Linux.
+- Remove all `devDependencies` from the packaged binary, reducing final size a lot.
+- Does not include development-only files and folders, saving even more space and protecting your app sources.
+- See [Electron support](electron.md)
+
 ### `npm run unit`
 
 > Run unit tests in PhantomJS with [Karma](http://karma-runner.github.io/0.13/index.html). See [Unit Testing](unit.md) for more details.

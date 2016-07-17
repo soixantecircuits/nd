@@ -37,6 +37,14 @@ $ npm run electron
   - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
   - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
 
+- `npm run electron`: developpers friendly features when working in a dev environment.
+  - Auto opens the devtools.
+
+- `npm run package`: Package your app for distribution with [electron-packager](https://github.com/electron-userland/electron-packager).
+  - Portable version of your app (NodeJS and WebKit embedded).
+  - Package for Windows/OS X/Linux.
+  - Remove all `devDependencies` from the packaged binary, reducing final size a lot.
+
 - `npm run unit`: Unit tests run in PhantomJS with [Karma](http://karma-runner.github.io/0.13/index.html) + [Mocha](http://mochajs.org/) + [karma-webpack](https://github.com/webpack/karma-webpack).
   - Supports ES2015 in test files.
   - Supports all webpack loaders.

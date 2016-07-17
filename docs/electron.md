@@ -36,3 +36,29 @@ This is the main breaking point between electron and browser bundles (“bundle"
 With that in mind, you have two solutions: making your sources accessible through `http://` or `file://`. Nd comes with the **`file://`** option for portability and simplicity. It simply takes some adjustements to the `webpack` config, by referencing the bundled files with their absolute path for example.
 
 Since nd comes with [`vue-router`](http://router.vuejs.org/en/index.html), you also have to keep in mind that you **cannot** enable the `history` [option](http://router.vuejs.org/en/options.html). That is because your app URLs would look like `file:///path/to/your/app/index.html/my-route/`, which makes no sense in UNIX filesystem architecture.
+
+### Building and packaging your app
+
+*See [`commands`](commands.md).*
+
+Simply run:
+
+```bash
+$ npm run build
+```
+
+command to bundle your app into an optimized production-ready SPA. Output will resides in the `dist` folder.
+
+Nd provides you a way to quickly and easily package your app into a Windows, OS X or Linux portable binary with:
+
+```bash
+$ npm run package
+```
+
+Running this command without any further parameter will package your app for your current platform. Nevertheless, you can specify any platform from any OS by adding the `-- -p {platform}` flag to this command. Simply type `linux`, `darwin` (OS X), `win` or `all` in place of the `{platform}` placeholder.
+
+Architecture is `x64`, but if your project is targetted at `ia32` architecture, or even both, you can modify the `build/package-electron.js` file (see [here](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#arch) for API details).
+
+No `devDependencies` will be copied into the packaged binary, but all standard `dependencies` will, except `electron-prebuilt`, `electron-packager` and all `node_modules/.bin` executables. `releases` and `.git` folders will also be ignored, as well as development-only files and folders (`build/`, `src`, `test`, ...)
+
+In production environment (that is if `NODE_ENV` is not set to `dev`), Electron will look into the `dist/` folder to run your app. Make sure to run the `build` command before 😉.

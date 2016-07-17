@@ -23,6 +23,9 @@ npm run electron
 {{/if}}
 npm run build
 
+# package a portable binary for a specific platform.
+npm run package [-- -p {platform}]
+
 # run unit tests
 npm run unit
 
