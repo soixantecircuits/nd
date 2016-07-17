@@ -1,8 +1,9 @@
-import Vue from 'vue'
-import App from './App'
+import 'gsap'
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App }
-})
+import Vue from 'vue'
+import router from './router'
+import './transitions'
+
+const App = Vue.extend({})
+
+router.start(App, 'body')

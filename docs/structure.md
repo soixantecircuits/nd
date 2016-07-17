@@ -14,8 +14,12 @@
 │   ├── App.vue                 # main app component
 │   ├── components/             # ui components
 │   │   └── ...
-│   └── assets/                 # module assets (processed by webpack)
-│       └── ...
+│   ├── assets/                 # module assets (processed by webpack)
+│   |   └── ...
+|   └── vuex
+|       ├── store.js     # exports the store (with initial state and mutations)
+|       ├── getters.js     # exports all getters
+|       └── actions.js   # exports all actions
 ├── static/                     # pure static assets (directly copied)
 ├── test/
 │   └── unit/                   # unit tests

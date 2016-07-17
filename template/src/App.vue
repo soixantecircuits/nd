@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <hello></hello>
+    <menu></menu>
+
     <p>
       Welcome to neodymium!
     </p>
@@ -13,21 +14,25 @@
       If you have any issues with the setup, please file an issue at this boilerplate's
       <a href="https://github.com/soixantecircuits/nd" target="_blank">repository</a>.
     </p>
-    <p>
-      You may also want to checkout
-      <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
-      <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
-    </p>
+    <router-view transition="default"></router-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import store from './vuex/store'
+import Menu from './components/Menu.vue'
 
 export default {
+  name: 'App',
   components: {
-    Hello
-  }
+    Menu
+  },
+  route: {
+    data: function (transition) {
+      // console.log('App.vue - transition from %s to %s', transition.from.name, transition.to.name)
+    }
+  },
+  store
 }
 </script>
 
@@ -49,11 +54,18 @@ body {
   max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
+  position: relative;
 }
 
 #app a {
   color: #42b983;
   text-decoration: none;
+}
+
+#app > div {
+  background: #EEE;
+  position: absolute;
+  width: 100%;
 }
 
 .logo {
