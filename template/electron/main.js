@@ -31,6 +31,7 @@ function createWindow () {
     options.setMenuBarVisibility = false
   } else {
     // Open dev tools and devtron in dev mode
+    require('devtron').install()
     require('electron-debug')({showDevTools: true})
   }
 

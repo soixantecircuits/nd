@@ -45,8 +45,9 @@
     "css-loader": "^0.23.0",
     {{#electron}}
     "commander": "^2.9.0",
-    "electron-packager": "^7.3.0",
+    "devtron": "^1.2.1",
     "electron-debug": "^1.0.1",
+    "electron-packager": "^7.3.0",
     "electron-prebuilt": "1.2.6",
     {{/electron}}
     "eslint": "^2.10.2",
