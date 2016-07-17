@@ -6,7 +6,7 @@
 - [Handling Static Assets](static.md)
 - [Environment Variables](env.md)
 - [Electron support](electron.md)
-- [Integrate with Backend Framework](backend.md)
+- [Configure you build](build-config.md)
 - [API Proxying During Development](proxy.md)
 - [Unit Testing](unit.md)
 - [End-to-end Testing](e2e.md)

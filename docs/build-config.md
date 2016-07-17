@@ -1,6 +1,10 @@
-# Integrating with Backend Framework
+# Configure you build
 
-If you are building a purely-static app (one that is deployed separately from the backend API), then you probably don't even need to edit `config/index.js`. However, if you want to integrate this template with an existing backend framework, e.g. Rails/Django/Laravel, which comes with their own project structures, you can edit `config/index.js` to directly generate front-end assets into your backend project.
+_**Warning:** As a general rule, you should not mess with the `build/` and `config/` files. They are already set up for either Electron or the browser and you will most likely just f**k things up._
+
+_**Note:** You can see the previous warning as a "warranty void if seal is broken" notice._
+
+If you need to build your app into a place outside its current directory, you can edit `config/index.js`.
 
 Let's take a look at the default `config/index.js`:
 
@@ -30,13 +34,11 @@ Inside the `build` section, we have the following options:
 
 This is where the `index.html` (with injected asset URLs) will be generated.
 
-If you are using this template with a backend-framework, you can edit `index.html` accordingly and point this path to a view file rendered by your backend app, e.g. `app/views/layouts/application.html.erb` for a Rails app, or `resources/views/index.blade.php` for a Laravel app.
-
 ### `build.assetsRoot`
 
 > Must be an absolute path on your local file system.
 
-This should point to the root directory that contains all the static assets for your app. For example, `public/` for both Rails/Laravel.
+This should point to the root directory that contains all the static assets for your app.
 
 ### `build.assetsSubDirectory`
 
@@ -48,7 +50,7 @@ Files inside `static/` will be copied into this directory as-is during build. Th
 
 ### `build.assetsPublicPath`
 
-This should be the URL path where your `build.assetsRoot` will be served from over HTTP. In most cases, this will be root (`/`). Only change this if your backend framework serves static assets with a path prefix. Internally, this is passed to Webpack as `output.publicPath`.
+This should be the URL path where your `build.assetsRoot` will be served. If you are working on a browser targetted app, this will probably be `'/'` (you might need a prefix depending on your back-end),
 
 ### `build.productionSourceMap`
 
