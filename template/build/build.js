@@ -22,7 +22,10 @@ console.log(
 
 var spinner = ora({
   text:'building for production...',
-  spinner: 'monkey'
+  spinner: {
+    interval: 60,
+    frames: [' 🚀       ', '💥 🚀      ', '☁ 🚀      ', '☁ ☁ 🚀    ', '☁ ☁ ☁ 🚀', '☁ ☁ ☁ ☁ 🚀', '        ✨', '         ']
+  }
 })
 spinner.start()
 
