@@ -9,6 +9,7 @@
     "build": "node build/build.js",
     {{#electron}}
     "electron": "export NODE_ENV=\"dev\"; ./node_modules/.bin/electron .",
+    "package": "node build/package-electron",
     {{/electron}}
     {{#unit}}
     "unit": "karma start test/unit/karma.conf.js --single-run",
@@ -43,6 +44,8 @@
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.23.0",
     {{#electron}}
+    "commander": "^2.9.0",
+    "electron-packager": "^7.3.0",
     "electron-debug": "^1.0.1",
     "electron-prebuilt": "1.2.6",
     {{/electron}}

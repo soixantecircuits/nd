@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 docs/_book
 dev-project/**
+npm-debug.log
