@@ -2,7 +2,7 @@
 
 All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/scripts).
 
-### `npm run dev`
+### `npm run dev [-- -t "{target}"]`
 
 > Starts a Node.js local development server. See [API Proxying During Development](proxy.md) for more details.
 
@@ -10,6 +10,7 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - State preserving hot-reload
 - State preserving compilation error overlay
 - Lint-on-save with ESLint
+- `-t` (or `--target=`) modifier is optionnal and override the default [webpack target](https://webpack.github.io/docs/configuration.html#target). This can allow you to develop in a browser with the Electron option enabled, or the opposite.
 - Source maps
 
 ### `npm run electron`
@@ -19,7 +20,7 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - Adds some developper friendly features when working in a dev environment:
   - Auto opens the devtools.
 
-### `npm run build`
+### `npm run build [-- -t "{target}"]`
 
 > Build assets for production. See [Configure you build](build-config.md) and [Electron support](electron.md) for more details.
 
@@ -28,6 +29,7 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
 - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
 - If you pick [Electron support](electron.md), build will be setup to work over `file://` and have access to [electron built-in modules](https://github.com/webpack/webpack/blob/3d5dc1a7bf8c7e44acb89d3f0c4b357df6a0ac0a/lib/WebpackOptionsApply.js#L122).
+- `-t` (or `--target=`) modifier is optionnal and override the default [webpack target](https://webpack.github.io/docs/configuration.html#target)
 - Also see [deployment notes](build-config.md).
 
 ### `npm run package [-- -p {platform}]`

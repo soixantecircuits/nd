@@ -9,19 +9,16 @@
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+# -t (or --target=) option is optionnal and override the default webpack target (https://webpack.github.io/docs/configuration.html#target)
+npm run dev [-- -t "{target}"]
 
 # launch electron and open a window at localhost:8080
 # you must have run the `npm run dev` command in an other terminal window
 npm run electron
 
 # build for production with minification.
-{{#if electron}}
-# build will be targeted at electron.
-{{else}}
-# build will be targeted at web browser.
-{{/if}}
-npm run build
+# -t (or --target=) option is optionnal and override the default webpack target (https://webpack.github.io/docs/configuration.html#target)
+npm run build [-- -t "{target}"]
 
 # package a portable binary for a specific platform.
 npm run package [-- -p {platform}]

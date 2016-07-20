@@ -3,8 +3,7 @@
 Nd template allows you to generate a project with everything you need to develop and build an [Electron](http://electron.atom.io/) app. This doc will only cover nd specific topics and assumes you have basic Electron knowledge. If you whish to learn more about Electron, please check out their [documentation](http://electron.atom.io/docs/).
 
 *
-**Note**: For numerous reasons, choosing this option ~~can~~ will break browser compatibility.
-*
+**Note**: If you want to be able to use your app into a browser, please read about the `--target` flag in the [commands](commands.md) section.*
 
 ### Main file
 

@@ -43,8 +43,8 @@
     "babel-preset-stage-2": "^6.0.0",
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.23.0",
-    {{#electron}}
     "commander": "^2.9.0",
+    {{#electron}}
     "devtron": "^1.2.1",
     "electron-debug": "^1.0.1",
     "electron-packager": "^7.3.0",
