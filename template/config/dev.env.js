@@ -6,9 +6,9 @@ var merge = require('webpack-merge')
 {{/if}}
 
 {{#if electron}}
-module.exports = Object.assign({
+module.exports = Object.assign({}, prodEnv, {
   NODE_ENV: '"development"'
-}, prodEnv)
+})
 {{else}}
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"'
