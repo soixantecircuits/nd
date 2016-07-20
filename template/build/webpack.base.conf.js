@@ -3,8 +3,8 @@ var config = require('../config/index')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 
-var programm = require('commander')
-programm
+var program = require('commander')
+program
   .option('-t, --target [value]', 'bundle target.')
   .parse(process.argv)
 
@@ -17,7 +17,7 @@ module.exports = {
     publicPath: config.build.assetsPublicPath,
     filename: '[name].js'
   },
-  target: programm.target || {{#if electron}}'electron-renderer'{{else}}'web'{{/if}},
+  target: program.target || {{#if electron}}'electron-renderer'{{else}}'web'{{/if}},
   resolve: {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
