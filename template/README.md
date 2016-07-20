@@ -17,9 +17,9 @@ npm run electron
 
 # build for production with minification.
 {{#if electron}}
-# build will be targeted at web browser.
-{{else}}
 # build will be targeted at electron.
+{{else}}
+# build will be targeted at web browser.
 {{/if}}
 npm run build
 
