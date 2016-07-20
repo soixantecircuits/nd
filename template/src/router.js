@@ -8,12 +8,10 @@ Vue.use(VueRouter)
 
 /* eslint-disable no-new */
 const router = new VueRouter({
-  {{#if electron}}
-  abstract: true,
-  {{else}}
+  {{#unless electron}}
   history: true,
   hashbang: false,
-  {{/if}}
+  {{/unless}}
   transitionOnLoad: true
 })
 
