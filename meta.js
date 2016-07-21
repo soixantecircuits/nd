@@ -35,7 +35,7 @@ module.exports = {
   },
   helpers: {
     chandeDirectory: () => {
-      return (process.argv[3] === undefined)
+      return (process.argv[3] === undefined || process.argv[3] === '.')
         ? ''
         : `  cd ${process.argv[3]}\n`
     }
