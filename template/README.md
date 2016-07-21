@@ -22,15 +22,6 @@ npm run build [-- -t "{target}"]
 
 # package a portable binary for a specific platform.
 npm run package [-- -p {platform}]
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://soixantecircuits.github.io/nd/).

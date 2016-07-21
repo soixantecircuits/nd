@@ -58,6 +58,6 @@ Running this command without any further parameter will package your app for you
 
 Architecture is `x64`, but if your project is targetted at `ia32` architecture, or even both, you can modify the `build/package-electron.js` file (see [here](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#arch) for API details).
 
-No `devDependencies` will be copied into the packaged binary, but all standard `dependencies` will, except `electron-prebuilt`, `electron-packager` and all `node_modules/.bin` executables. `releases` and `.git` folders will also be ignored, as well as development-only files and folders (`build/`, `src`, `test`, ...)
+No `devDependencies` will be copied into the packaged binary, but all standard `dependencies` will, except `electron-prebuilt`, `electron-packager` and all `node_modules/.bin` executables. `releases` and `.git` folders will also be ignored, as well as development-only files and folders (`build/`, `src`, ...)
 
 In production environment (that is if `NODE_ENV` is not set to `dev`), Electron will look into the `dist/` folder to run your app. Make sure to run the `build` command before 😉.

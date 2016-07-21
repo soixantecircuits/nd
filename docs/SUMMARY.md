@@ -8,6 +8,4 @@
 - [Electron support](electron.md)
 - [Configure you build](build-config.md)
 - [API Proxying During Development](proxy.md)
-- [Unit Testing](unit.md)
-- [End-to-end Testing](e2e.md)
 - [Prerendering for SEO](prerender.md)

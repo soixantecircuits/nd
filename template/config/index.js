@@ -19,9 +19,7 @@ module.exports = {
         path.resolve(__dirname, '../src/'),
         path.resolve(__dirname, '../index.html'),
         path.resolve(__dirname, '../static/'),
-        path.resolve(__dirname, '../test/'),
         path.resolve(__dirname, '../.cache/'),
-        path.resolve(__dirname, '../test/'),
         path.resolve(__dirname, '../README.md'),
         path.resolve(__dirname, '../releases/'),
         path.resolve(__dirname, '../.babelrc'),
@@ -38,13 +36,7 @@ module.exports = {
     {{else}}
     assetsPublicPath: '/',
     {{/if}}
-    productionSourceMap: true,
-    // Gzip off by default as many popular static hosts such as
-    // Surge or Netlify already gzip all static assets for you.
-    // Before setting to `true`, make sure to:
-    // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
-    productionGzipExtensions: ['js', 'css']
+    productionSourceMap: true
   },
   dev: {
     env: require('./dev.env'),

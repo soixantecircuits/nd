@@ -18,19 +18,9 @@ module.exports = {
     electron: {
       type: 'confirm',
       message: 'Setup Electron support (might break browser support)?'
-    },
-    unit: {
-      type: 'confirm',
-      message: 'Setup unit tests with Karma + Mocha?'
-    },
-    e2e: {
-      type: 'confirm',
-      message: 'Setup e2e tests with Nightwatch?'
     }
   },
   filters: {
-    'test/unit/**/*': 'unit',
-    'test/e2e/**/*': 'e2e',
     'electron/**/*': 'electron'
   },
   helpers: {

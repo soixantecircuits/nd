@@ -16,7 +16,6 @@ $ vue init soixantecircuits/nd my-project
 $ cd my-project
 $ npm install
 $ npm run dev
-
 # if you picked Electron support,
 # in another terminal window
 $ npm run electron
@@ -44,17 +43,6 @@ $ npm run electron
   - Portable version of your app (NodeJS and WebKit embedded).
   - Package for Windows/OS X/Linux.
   - Remove all `devDependencies` from the packaged binary, reducing final size a lot.
-
-- `npm run unit`: Unit tests run in PhantomJS with [Karma](http://karma-runner.github.io/0.13/index.html) + [Mocha](http://mochajs.org/) + [karma-webpack](https://github.com/webpack/karma-webpack).
-  - Supports ES2015 in test files.
-  - Supports all webpack loaders.
-  - Easy mock injection.
-
-- `npm run e2e`: End-to-end tests with [Nightwatch](http://nightwatchjs.org/).
-  - Run tests in multiple browsers in parallel.
-  - Works with one command out of the box:
-    - Selenium and chromedriver dependencies automatically handled.
-    - Automatically spawns the Selenium server.
 
 ### Fork It And Make Your Own
 

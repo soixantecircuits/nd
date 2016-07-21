@@ -3,9 +3,7 @@ var express = require('express')
 var webpack = require('webpack')
 var config = require('../config/index')
 var proxyMiddleware = require('http-proxy-middleware')
-var webpackConfig = process.env.NODE_ENV === 'testing'
-  ? require('./webpack.prod.conf')
-  : require('./webpack.dev.conf')
+var webpackConfig = require('./webpack.dev.conf')
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
@@ -62,5 +60,5 @@ module.exports = app.listen(port, function (err) {
     return
   }
   console.log('Listening at http://localhost:' + port + '\n')
-  {{#electron}}console.log('To test in electron:\nopen a new terminal window and run\n\n  npm run electron'){{/electron}}
+  {{#electron}}console.log('To run in electron:\nopen a new terminal window and run\n\n  npm run electron'){{/electron}}
 })
