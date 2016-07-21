@@ -5,11 +5,21 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
+    "start": "npm run dev",
     "dev": "node build/dev-server.js",
-    "build": "node build/build.js",
+    "build": "node build/build.js{{#electron}} && npm run package{{/electron}}",
     {{#electron}}
-    "electron": "export NODE_ENV=\"dev\"; ./node_modules/.bin/electron .",
+    "build:darwin": "node build/build.js && npm run package:darwin",
+    "build:linux": "node build/build.js && npm run package:linux",
+    "build:win32": "node build/build.js && npm run package:win32",
+    "build:all": "node build/build.js && npm run package:all",
+    "build:no-package": "node build/build.js",
     "package": "node build/package-electron",
+    "package:darwin": "node build/package-electron -p darwin",
+    "package:linux": "node build/package-electron -p linux",
+    "package:win32": "node build/package-electron -p win32",
+    "package:all": "node build/package-electron -p all",
+    "electron": "export NODE_ENV=\"dev\"; ./node_modules/.bin/electron .",
     {{/electron}}
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },

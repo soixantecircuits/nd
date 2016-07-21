@@ -30,5 +30,5 @@ module.exports = {
         : `  cd ${process.argv[3]}\n`
     }
   },
-  completeMessage: 'To get started:\n\n{{chandeDirectory}}  npm install\n  npm run dev{{#electron}}\n  npm run electron # in another terminal window{{/electron}}\n\nDocumentation can be found at https://soixantecircuits.github.io/nd'
+  completeMessage: 'To get started:\n\n{{chandeDirectory}}  npm install\n  npm start\n\nDocumentation can be found at https://soixantecircuits.github.io/nd'
 }

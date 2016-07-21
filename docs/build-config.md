@@ -2,8 +2,6 @@
 
 _**Warning:** As a general rule, you should not mess with the `build/` and `config/` files. They are already set up for either Electron or the browser and you will most likely just f**k things up._
 
-_**Note:** You can see the previous warning as a "warranty void if seal is broken" notice._
-
 If you need to build your app into a place outside its current directory, you can edit `config/index.js`.
 
 Let's take a look at the default `config/index.js`:

@@ -14,6 +14,12 @@ Electron needs an entry point to know how to run your app. This is the file stat
 When using in development, you start Electron with:
 
 ```bash
+$ npm start
+```
+
+which internally runs:
+
+```bash
 $ npm run electron
 ```
 
@@ -40,24 +46,19 @@ Since nd comes with [`vue-router`](http://router.vuejs.org/en/index.html), you a
 
 *See [`commands`](commands.md).*
 
-Simply run:
+Nd provides you a way to quickly and easily package your app into a Windows, OS X or Linux portable binary with:
 
 ```bash
 $ npm run build
 ```
 
-command to bundle your app into an optimized production-ready SPA. Output will resides in the `dist` folder.
+Running this command will build your app into the `dist/` folder and package it for you. Without any further parameter will package your app for your current platform. Nevertheless, you can package for any platform from any OS by adding `:darwin`, `:linux`, `:win32` or `:all` to this command (see the [commands](commands.md) section).
 
-Nd provides you a way to quickly and easily package your app into a Windows, OS X or Linux portable binary with:
+If you just want to build without packaging, simple type `npm run build:no-package`.
 
-```bash
-$ npm run package
-```
-
-Running this command without any further parameter will package your app for your current platform. Nevertheless, you can specify any platform from any OS by adding the `-- -p {platform}` flag to this command. Simply type `linux`, `darwin` (OS X), `win` or `all` in place of the `{platform}` placeholder.
+If you only want to package with the current `dist/` folder, simple type `npm run package`.
 
 Architecture is `x64`, but if your project is targetted at `ia32` architecture, or even both, you can modify the `build/package-electron.js` file (see [here](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#arch) for API details).
 
 No `devDependencies` will be copied into the packaged binary, but all standard `dependencies` will, except `electron-prebuilt`, `electron-packager` and all `node_modules/.bin` executables. `releases` and `.git` folders will also be ignored, as well as development-only files and folders (`build/`, `src`, ...)
 
-In production environment (that is if `NODE_ENV` is not set to `dev`), Electron will look into the `dist/` folder to run your app. Make sure to run the `build` command before 😉.
