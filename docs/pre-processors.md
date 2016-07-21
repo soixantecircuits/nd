@@ -8,6 +8,10 @@ npm install sass-loader node-sass --save-dev
 
 Note you also need to install `node-sass` because `sass-loader` depends on it as a peer dependency.
 
+### Autoprefixer
+
+Nd includes [autoprefixer](https://www.npmjs.com/package/autoprefixer) and autoprefix for the last 2 Chrome versions.
+
 ### Using Pre-Processors inside Components
 
 Once installed, you can use the pre-processors inside your `*.vue` components using the `lang` attribute on `<style>` tags:

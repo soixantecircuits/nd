@@ -30,6 +30,11 @@ module.exports = {
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
   },
+  vue: {
+    autoprefixer: {
+      browsers: ['last 2 versions']
+    }
+  },
   module: {
     {{#lint}}
     preLoaders: [
