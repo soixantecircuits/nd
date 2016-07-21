@@ -23,19 +23,17 @@ $ vue init soixantecircuits/nd my-project
 $ cd my-project
 $ npm install
 $ npm run dev
-# if you picked Electron support,
-# in another terminal window
-$ npm run electron
 ```
 
 ## What's Included
 
-- `npm run dev`: first-in-class development experience.
+- `npm start`: first-in-class development experience.
   - Webpack + `vue-loader` for single file Vue components.
   - State preserving hot-reload
   - State preserving compilation error overlay
   - Lint-on-save with ESLint
   - Source maps
+  - Autorun `npm run electron` in Electron enabled apps.
 
 - `npm run build`: Production ready build.
   - JavaScript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2).
