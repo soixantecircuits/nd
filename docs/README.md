@@ -34,3 +34,5 @@ $ npm run dev
 # in another terminal window
 $ npm run electron
 ```
+
+<p style="opacity: 0;">P.S: the `:wq` on the template README: it's on purpose* 🙃</p>
