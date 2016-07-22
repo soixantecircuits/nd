@@ -16,16 +16,17 @@ module.exports = {
     packageDestination: path.resolve(__dirname, '../releases'),
     ignoredPaths: (() => {
       const paths = [
-        path.resolve(__dirname, '../src/'),
-        path.resolve(__dirname, '../index.html'),
-        path.resolve(__dirname, '../static/'),
-        path.resolve(__dirname, '../.cache/'),
-        path.resolve(__dirname, '../README.md'),
-        path.resolve(__dirname, '../releases/'),
-        path.resolve(__dirname, '../.babelrc'),
-        path.resolve(__dirname, '../.editorconfig'),
-        path.resolve(__dirname, '../.gitignore'),
-        path.resolve(__dirname, '../build/'),
+        '^/src',
+        '^/index.html',
+        '^/static',
+        '^/.cache',
+        '^/README.md',
+        '^/releases',
+        '^/.babelrc',
+        '^/.editorconfig',
+        '^/.eslint',
+        '^/.gitignore',
+        '^/build'
       ]
 
       const regexps = paths.map((path) => {
