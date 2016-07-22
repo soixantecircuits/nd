@@ -1,3 +1,4 @@
+const path = require('path')
 const config = require('../config/index')
 
 const electron = require('electron')
@@ -32,7 +33,12 @@ function createWindow () {
   } else {
     // Open dev tools and devtron in dev mode
     require('devtron').install()
-    require('electron-debug')({showDevTools: true})
+
+    BrowserWindow.addDevToolsExtension(path.join(__dirname, '../node_modules/devtron'))
+    let installExtension = require('electron-devtools-installer')
+    installExtension.default(installExtension.VUEJS_DEVTOOLS)
+      .then((name) => mainWindow.webContents.openDevTools())
+      .catch((err) => console.log('An error occurred: ', err))
   }
 
   options.webPreferences = {
