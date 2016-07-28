@@ -1,3 +1,4 @@
+{{#electron}}
 // Try to load electron remote
 var remote
 try {
@@ -6,6 +7,7 @@ try {
   console.warn('app is not running in electron, loading default config')
 }
 
+{{/electron}}
 // List of settings to use
 let files = []
 try {
@@ -14,12 +16,14 @@ try {
 
   // Load more settings if you need
   // files.push(require('./../../settings/' + process.env.project + '.json'))
+  {{#electron}}
 
   // If used in electron, load settings given as arg => ./myapp -- -s mySettings.json
   if (remote && remote.process.env['SETTINGS']) {
     console.log('loading custom settings')
     files.push(JSON.parse(remote.process.env['SETTINGS']))
   }
+  {{/electron}}
 } catch (e) {
   console.warn('Unable to load settings', e)
 }

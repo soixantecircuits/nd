@@ -8,7 +8,6 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 // Modules to load settings
 const program = require('commander')
-const fs = require('fs')
 
 // add some command line arguments
 app.commandLine.appendArgument('--disable-pinch')
@@ -29,7 +28,8 @@ let settings
 function loadSettings (filename) {
   function load (filename) {
     try {
-      let settingsString = fs.readFileSync(filename, 'utf8')
+      settings = require(path.resolve(filename))
+      let settingsString = JSON.stringify(settings)
       process.env['SETTINGS'] = settingsString
     } catch (e) {
       if (e.code === 'ENOENT') {
