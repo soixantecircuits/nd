@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import settings from './../lib/settings.js'
+
 // Make vue aware of Vuex
 Vue.use(Vuex)
 
 // Create an object to hold the initial state when
 // the app starts up
 const state = {
-  count: 0
+  count: settings.count.default
 }
 
 // Create an object storing various mutations. We will write the mutation
