@@ -30,7 +30,6 @@ function loadSettings (filename) {
   function load (filename) {
     try {
       let settingsString = fs.readFileSync(filename, 'utf8')
-      settings = JSON.parse(settingsString)
       process.env['SETTINGS'] = settingsString
     } catch (e) {
       if (e.code === 'ENOENT') {
