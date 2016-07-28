@@ -24,7 +24,7 @@ if (process.argv.length > 1) {
 }
 
 // Settings loader
-let settings
+let settings = null
 function loadSettings (filename) {
   function load (filename) {
     try {
@@ -40,7 +40,9 @@ function loadSettings (filename) {
       }
     }
   }
-  if (filename) load(filename)
+  if (filename) {
+    load(filename)
+  }
   // if no config is given let the app load default configs
 }
 

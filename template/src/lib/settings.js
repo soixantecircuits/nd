@@ -1,6 +1,6 @@
 {{#electron}}
 // Try to load electron remote
-var remote
+var remote = null
 try {
   remote = require('electron').remote
 } catch (e) {
