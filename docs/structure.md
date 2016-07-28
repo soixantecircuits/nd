@@ -13,6 +13,8 @@
 │   └── ...
 ├── electron/
 │   └── main.js                 # electron entry point
+├── settings/
+│   └── default.json            # default settings
 ├── releases/                   # destination folder for your electron packaged apps
 │   └── ...
 ├── src/
@@ -45,6 +47,10 @@ This is the main configuration file that exposes some of the most common configu
 ### `electron/`
 
 This directory holds all the electron related stuffs. The `main.js` file is the entry point for Electron, as specified in the `main` property of your `package.json`. See [Electron support](electron.md) for more details.
+
+### `settings/`
+
+This is where the settings of your app should be. The default.json file contains all the default settings and will always be loaded first as the base of your settings.
 
 ### `releases/`
 

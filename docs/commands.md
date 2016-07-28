@@ -14,12 +14,13 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - Source maps.
 - Autorun the `npm run electron` command.
 
-### `npm run electron`
+### `npm run electron [-- -s "{path to settings}"]`
 
 > Starts Electron and open a window at your local dev server.
 
 - Adds some developper friendly features when working in a dev environment:
   - Auto opens the devtools.
+- `-s` is optionnal and loads the settings given over the default settings.
 
 ### `npm run build [-- -t "{target}"]`
 

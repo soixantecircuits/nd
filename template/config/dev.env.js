@@ -1,9 +1,9 @@
 {{#if electron}}
 // Do not use `webpack-merge` since there is no devDependencies in packaged app
-var prodEnv = require('./prod.env')
 {{else}}
 var merge = require('webpack-merge')
 {{/if}}
+var prodEnv = require('./prod.env')
 
 {{#if electron}}
 module.exports = Object.assign({}, prodEnv, {

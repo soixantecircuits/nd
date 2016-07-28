@@ -21,7 +21,8 @@ npm start [-- -t {target}] # or `npm run dev`
 
 # launch electron and open a window at localhost:8080
 # you must have run the `npm run dev` command in an other terminal window
-npm run electron
+# -s option is optionnal is used to add settings over the default settings
+npm run electron [-- -s {settings}]
 
 # build for production with minifications and package the app.
 npm run build
