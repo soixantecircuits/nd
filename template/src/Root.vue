@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <menu></menu>
+  <div class="root">
+    <counter></counter>
     <p>
       Welcome to neodymium!
     </p>
@@ -13,62 +13,43 @@
       If you have any issues with the setup, please file an issue at this boilerplate's
       <a href="https://github.com/soixantecircuits/nd" target="_blank">repository</a>.
     </p>
-    <router-view transition="default"></router-view>
   </div>
 </template>
 
 <script>
-import store from './vuex/store'
-import Menu from './components/Menu.vue'
-
+import Counter from './components/Counter'
 export default {
-  name: 'App',
   components: {
-    Menu
-  },
-  route: {
-    data: function (transition) {
-      // console.log('App.vue - transition from %s to %s', transition.from.name, transition.to.name)
-    }
-  },
-  store
+    Counter
+  }
 }
 </script>
-
 <style>
-html {
-  height: 100%;
-}
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+html {
   height: 100%;
 }
 
 #app {
   color: #2c3e50;
-  margin-top: -100px;
   max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
-  position: relative;
 }
 
 #app a {
   color: #42b983;
   text-decoration: none;
 }
+#app p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
 
 #app > div {
-  background: #EEE;
   position: absolute;
   width: 100%;
 }
 
-.logo {
-  width: 100px;
-  height: 100px
-}
 </style>

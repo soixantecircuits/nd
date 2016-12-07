@@ -1,9 +1,10 @@
-import 'gsap'
-
 import Vue from 'vue'
-import router from './router'
-import './transitions'
+import App from './components/App'
+import router from './lib/router'
+import store from './vuex/store'
 
-const App = Vue.extend({})
-
-router.start(App, 'body')
+const app = new Vue({
+  router,
+  store,
+  ...App
+}).$mount('#app');
