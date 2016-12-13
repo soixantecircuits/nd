@@ -59,7 +59,8 @@ function createWindow () {
 
   if (process.env['NODE_ENV'] !== 'dev') {
     // Add kiosk settings to the window
-    options.fullScreen = true
+    options.kiosk = true
+    options.autoHideMenuBar = true
   } else {
     // Open dev tools and devtron in dev mode
     require('devtron').install()
