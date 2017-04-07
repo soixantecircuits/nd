@@ -1,0 +1,34 @@
+{
+  "server": {
+    "host" : "localhost",
+    "port" : 9090
+  },
+  "folder": {
+    "example": "/path/to/folder"
+  },
+  "flag": {
+    "example": true
+  },
+  "media": {
+    "meta": {
+      "title": "Some title",
+      "description": "Some description",
+      "message": "Some message",
+      "source": "http://some-source.url/"
+    }
+  },
+  "service": {
+    "altruist": {
+      "host" : "altruist-ip",
+      "port" : 6060
+    },
+    "spacebro": {
+      "host" : "spacebro-ip",
+      "port" : 8888,
+      "channel": "my-channel",
+      "client" : "my-app",
+      "inputMessage": "my-input-msg",
+      "outputMessage": "my-output-msg"
+    }
+  }
+}

@@ -2,7 +2,11 @@
 var path = require('path')
 var package = require('../package.json')
 
+const standardSettings = require('standard-settings')
+const settings = require('nconf').get()
+
 module.exports = {
+  settings: settings,
   build: {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),

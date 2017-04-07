@@ -15,42 +15,11 @@ app.commandLine.appendArgument('--overscroll-history-navigation=0')
 app.commandLine.appendArgument('--ignore-gpu-blacklist')
 app.commandLine.appendSwitch('remote-debugging-port', '8315')
 
-// get command line arguments
-if (process.argv.length > 1) {
-  program
-    // TODO: .version('0.0.1')
-    .option('-s, --settings <path>', 'Set settings file path')
-    .parse(process.argv)
-}
-
-// Settings loader
-let settings = null
-function loadSettings (filename) {
-  function load (filename) {
-    try {
-      settings = require(path.resolve(filename))
-      let settingsString = JSON.stringify(settings)
-      process.env['SETTINGS'] = settingsString
-    } catch (e) {
-      if (e.code === 'ENOENT') {
-        console.log('no file or directory named:', program.settings)
-      } else {
-        console.log('Error while loading:', program.settings)
-        console.error(e)
-      }
-    }
-  }
-  if (filename) {
-    load(filename)
-  }
-  // if no config is given let the app load default configs
-}
-
 // Keep a global reference of the window object, if you don't, the window will be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
-  loadSettings(program.settings)
+  global.settings = config.settings
 
   const options = {
     width: 1920,
