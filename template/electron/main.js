@@ -6,8 +6,6 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-// Modules to load settings
-const program = require('commander')
 
 // add some command line arguments
 app.commandLine.appendArgument('--disable-pinch')
