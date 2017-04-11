@@ -6,7 +6,9 @@ import NotFound from '../components/NotFound'
 Vue.use(Router)
 
 export default new Router({
+  {{#unless electron}}
   mode: 'history',
+  {{/unless}}
   routes: [
     {
       path: '/',
