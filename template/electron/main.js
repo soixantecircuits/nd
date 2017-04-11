@@ -53,6 +53,9 @@ function createWindow () {
 
   // Create the browser window.
   mainWindow = new BrowserWindow(options)
+  if (config.settings['DEVTOOLS']){
+    mainWindow.webContents.openDevTools()
+  }
 
   if (process.env['NODE_ENV'] !== 'dev') {
     mainWindow.loadURL(`file://${config.build.index}`)
