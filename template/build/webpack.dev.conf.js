@@ -17,7 +17,7 @@ module.exports = merge(baseWebpackConfig, {
   },
   {{/electron}}
   module: {
-    loaders: utils.styleLoaders()
+    rules: utils.styleLoaders()
   },
   // eval-source-map is faster for development
   devtool: '#eval-source-map',
@@ -26,9 +26,9 @@ module.exports = merge(baseWebpackConfig, {
       'process.env': config.dev.env
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
-    new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
