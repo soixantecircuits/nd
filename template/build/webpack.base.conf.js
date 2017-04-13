@@ -1,7 +1,13 @@
 var path = require('path')
 var config = require('../config/index')
+var webpack = require('webpack')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
+
+{{#unless electron}}
+var standardSettings = require('standard-settings')
+var settings = require('nconf').get()
+{{/unless}}
 
 var program = require('commander')
 program
@@ -9,6 +15,11 @@ program
   .parse(process.argv)
 
 module.exports = {
+  {{#unless electron}}
+  plugins: [
+    new webpack.DefinePlugin({SETTINGS: JSON.stringify(settings)})
+  ],
+  {{/unless}}
   entry: {
     app: './src/main.js'
   },

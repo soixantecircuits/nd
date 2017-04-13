@@ -51,7 +51,7 @@ function createWindow () {
 
   // Create the browser window.
   mainWindow = new BrowserWindow(options)
-  if (config.settings['DEVTOOLS']){
+  if (config.settings && config.settings['DEVTOOLS']){
     mainWindow.webContents.openDevTools()
   }
 
