@@ -6,7 +6,7 @@
     </p>
     <p>
       To get a better understanding of how this works, check out
-      <a href="http://soixantecircuits.github.io/nd" target="_blank">its documentation</a>.
+      <a href="http://soixantecircuits.github.io/nd" target="_blank" :style="'color: ' + color">its documentation</a>.
       It is also recommended to go through the docs for
       <a href="http://webpack.github.io/" target="_blank">Webpack</a> and
       <a href="http://vuejs.github.io/vue-loader/" target="_blank">vue-loader</a>.
@@ -18,9 +18,23 @@
 
 <script>
 import Counter from './components/Counter'
+{{#if electron}}
+var settings = require('electron').remote.getGlobal('settings') // Global variable set in mainProcess
+{{else}}
+var settings = SETTINGS // Global variable set in process
+{{/if}}
+
 export default {
+  data() {
+    return {
+      color: settings.color || '#42b983'
+    }
+  },
   components: {
     Counter
+  },
+  mounted() {
+    this.$store.state.count = settings.count || 0
   }
 }
 </script>

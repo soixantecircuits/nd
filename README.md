@@ -25,6 +25,22 @@ $ npm install
 $ npm run dev
 ```
 
+You can define settings variables for your project in several ways like loading them from a file, from the environment or from command line options.
+nd uses [standard-settings](https://github.com/soixantecircuits/standard-settings). It will try to load settings automatically from the environment, the command line arguments, from the default settings files `settings/settings.default.json` and `settings/settings.json`.
+You can specify a `settings` variable in any of those methods, and if it contains a path to a json file, settings will also be loaded from that file
+``` bash
+$ customVar=42 npm run dev
+  or
+$ settings="/path/to/custom/settings.json" npm run dev
+  or (for electron)
+$ npm run build
+$ ./releases/test-linux-x64/project -- --settings="/path/to/custom/settings.json"
+```
+If your app is set up to use electron, you can get the loaded settings with `require('electron').remote.getGlobal('settings')`.
+If your app is not using electron, the loaded settings are stored in the global variable `SETTINGS`.
+
+If your app is built for electron and you want to use devtools, simply define a variable `DEVTOOLS` in your settings. It will open it when you launch your app.
+
 ## What's Included
 
 - `npm start`: first-in-class development experience.
