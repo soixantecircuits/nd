@@ -9,6 +9,23 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var env = config.build.env
 
 var webpackConfig = merge(baseWebpackConfig, {
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.vue$/,
+  //       loader: 'vue-loader',
+  //       options: {
+  //         loaders: utils.cssLoaders({
+  //           sourceMap: config.build.productionSourceMap,
+  //           extract: true
+  //         }),
+  //         autoprefixer: {
+  //           browsers: ['last 2 versions']
+  //         }
+  //       }
+  //     }
+  //   ]
+  // }
   module: {
     rules: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: true })
   },
@@ -17,12 +34,6 @@ var webpackConfig = merge(baseWebpackConfig, {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
-  },
-  vue: {
-    loaders: utils.cssLoaders({
-      sourceMap: config.build.productionSourceMap,
-      extract: true
-    })
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/workflow/production.html
@@ -34,7 +45,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         warnings: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     // extract css into its own file
     new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
     // generate dist index.html with correct asset hash for caching.

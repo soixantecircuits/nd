@@ -24,7 +24,7 @@ exports.cssLoaders = function (options) {
 
     if (options.extract) {
       //return ExtractTextPlugin.extract('vue-style-loader', sourceLoader)
-      return ExtractTextPlugin.extract('vue-style-loader', sourceLoader, {publicPath:'../'})
+      return ExtractTextPlugin.extract({ fallback: 'vue-style-loader', use: sourceLoader, publicPath: '../'})
     } else {
       return ['vue-style-loader', sourceLoader].join('!')
     }
