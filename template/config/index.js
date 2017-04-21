@@ -49,7 +49,7 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8080,
+    port: settings.server && settings.server.port ? settings.server.port : 8080,
     proxyTable: {}
   }
 }
