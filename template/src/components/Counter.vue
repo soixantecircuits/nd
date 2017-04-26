@@ -7,6 +7,8 @@
 </template>
 
 <script>
+'use strict'
+
 export default {
   computed: {
     count() {
