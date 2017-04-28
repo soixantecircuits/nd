@@ -32,7 +32,7 @@ module.exports = {
   target: program.target || {{#if electron}}'electron-renderer'{{else}}'web'{{/if}},
   resolve: {
     enforceExtension: false,
-    extensions: ['.js', '.vue'],
+    extensions: ['.js', '.vue', '.json'],
     modules: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
