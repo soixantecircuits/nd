@@ -20,7 +20,7 @@ const packageOptions = {
   prune: true,
   overwrite: true,
   platform: program.platform,
-  arch: 'x64',
+  arch: 'x64'
 }
 
 packager(packageOptions, function (err, appPaths) {

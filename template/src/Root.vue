@@ -17,6 +17,8 @@
 </template>
 
 <script>
+'use strict'
+
 import Counter from './components/Counter'
 {{#if electron}}
 var settings = require('electron').remote.getGlobal('settings') // Global variable set in mainProcess
@@ -39,15 +41,14 @@ export default {
 }
 </script>
 <style>
-
 html {
   height: 100%;
+  font-family: Source Sans Pro, Helvetica, sans-serif;
 }
 
 #app {
   color: #2c3e50;
   max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -65,5 +66,4 @@ html {
   position: absolute;
   width: 100%;
 }
-
 </style>

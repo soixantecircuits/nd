@@ -1,15 +1,15 @@
-var path = require('path')
-var config = require('../config/index')
-var webpack = require('webpack')
-var utils = require('./utils')
-var projectRoot = path.resolve(__dirname, '../')
+const path = require('path')
+const config = require('../config/index')
+const webpack = require('webpack')
+const utils = require('./utils')
+const projectRoot = path.resolve(__dirname, '../')
 
 {{#unless electron}}
-var standardSettings = require('standard-settings')
-var settings = require('nconf').get()
+const standardSettings = require('standard-settings')
+const settings = require('nconf').get()
 {{/unless}}
 
-var program = require('commander')
+const program = require('commander')
 program
   .option('-t, --target [value]', 'bundle target.')
   .parse(process.argv)
@@ -24,17 +24,15 @@ module.exports = {
     app: './src/main.js'
   },
   output: {
-    path: config.build.assetsRoot,
+    path: '/',
     // this causes absolute path in builds, which makes them non-distribuable on an other machine
-    // we may not need this in nd at all
-    // so let's remove it on august, 22th 2016 if no one complains
     //publicPath: config.build.assetsPublicPath,
     filename: '[name].js'
   },
   target: program.target || {{#if electron}}'electron-renderer'{{else}}'web'{{/if}},
   resolve: {
     enforceExtension: false,
-    extensions: ['.js', '.vue'],
+    extensions: ['.js', '.vue', '.json'],
     modules: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
@@ -99,15 +97,15 @@ module.exports = {
   },
   externals: [
     (function () {
-      var IGNORES = [
+      const IGNORES = [
         'electron'
-      ];
+      ]
       return function (context, request, callback) {
         if (IGNORES.indexOf(request) >= 0) {
-          return callback(null, "require('" + request + "')");
+          return callback(null, "require('" + request + "')")
         }
-        return callback();
-      };
+        return callback()
+      }
     })()
   ]
 }

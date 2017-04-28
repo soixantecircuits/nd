@@ -1,3 +1,5 @@
+'use strict'
+
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -8,17 +10,17 @@ const state = {
 }
 
 const mutations = {
-  INCREMENT(state) {
+  INCREMENT (state) {
     state.count++
   },
-  DECREMENT(state) {
+  DECREMENT (state) {
     state.count--
   }
 }
 
 const store = new Vuex.Store({
   state,
-  mutations,
+  mutations
 })
 
 export default store
