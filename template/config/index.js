@@ -3,8 +3,7 @@ var path = require('path')
 var package = require('../package.json')
 
 {{#if electron}}
-const standardSettings = require('standard-settings')
-const settings = require('nconf').get()
+const settings = require('standard-settings').getSettings()
 {{/if}}
 
 module.exports = {

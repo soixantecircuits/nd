@@ -5,8 +5,7 @@ const utils = require('./utils')
 const projectRoot = path.resolve(__dirname, '../')
 
 {{#unless electron}}
-const standardSettings = require('standard-settings')
-const settings = require('nconf').get()
+const settings = require('standard-settings').getSettings()
 {{/unless}}
 
 const program = require('commander')
