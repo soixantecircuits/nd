@@ -4,13 +4,13 @@ Neodymium
 Introduction - What is nd?
 --------------------------
 
-Neodymiumn (or nd for short) is a `vue-cli` framework for a `webpack` app. The aim of nd is to simplify making a webpack application: in theory, all you have to do is provide it with a few custom attributes (project name, description), and let it take care of the boilerplate code for you.
+Neodymiumn (or nd for short) is a `vue-cli` framework for a `webpack` app. The aim of nd is to simplify making a webpack application: in theory, all you have to do is provide nd with a few custom attributes (project name, description), and let it take care of the boilerplate code for you.
 
 In practice, you may need to look at the boilerplate code at some point to understand how your project is built.
 
-This tutorial will take you through the process installing, developping and running a basic grocery list app with nd.
+This tutorial will take you through the process of installing, developping and running a basic grocery list app with nd.
 
-It will be a simple one-page application, with a list of grocery item. Each item will be made of a checkbox, and a line of text which will be crossed out when the box is checked. Below all items, there will be a text input zone a button to add more items.
+It will be a simple one-page application, with a list of grocery items. Each item will be made of a checkbox, and a line of text which will be crossed out when the box is checked. Below all items, there will be a text input zone and a button to add more items.
 
 The final app should look like this:
 
@@ -35,11 +35,11 @@ First off, you need vue-cli to install nd:
 
 vue-cli is a command line tool for installing project templates. You can use it to download and configure a new project with:
 
-[TODO - how to configure it?]
-
     $ vue init soixantecircuits/nd my-grocery-list
 
-Install dependencies in your `node_modules` folder:
+Vue-init asks you to name the project, add a description, etc; for now you can leave these options to their default values. The most important question is whether or not you want electron support; leave it to "yes".
+
+Next, install dependencies in your `node_modules` folder:
 
     $ cd my-grocery-list
     $ npm install
@@ -56,7 +56,7 @@ Making the app
 
 ### The nd pipeline
 
-First, we need to understand what goes on under the hood, when the previous screen is displayed. What goes from typing `npm run dev` to displaying "Hello nd"? [TODO]
+First, we need to understand what goes on under the hood, when the previous screen is displayed. What goes from typing `npm run dev` to displaying "Welcome to neodymium"?
 
 Well, the pipeline is somewhat convoluted, but it goes like this:
 
@@ -69,6 +69,8 @@ Well, the pipeline is somewhat convoluted, but it goes like this:
 * `src/components/App.vue` is an indirection, which displays the component returned by `src/lib/router.js`; usually this is the Root component in `src/Root.vue`
 
 If you didn't understand everything, don't worry. You only need to remember that the effective entry point of your app is `src/Root.vue`; and indeed, if you open it, you can see the HTML code for the content of the default showcase app, inside the `<template>` tags.
+
+If you don't understand what a `.vue` file is, single-file component [TODO]
 
 ### Writing the app
 
@@ -87,25 +89,33 @@ For starters, open `src/Root.vue` and replace the contents of the `<template>` s
 
 Then, replace the contents of the `<script>` section with the following code:
 
+    'use strict'
+
     export default {
       data() { return {
-        ["Bread", "Butter", "Milk"]
-      }}
+        items: ["Bread", "Butter", "Milk"],
+        next_item: ""
+      }},
+      methods: {
+        add_item() {
+          if (this.next_item) {
+            this.items.push(this.next_item)
+            this.next_item = "";
+          }
+        }
+      }
     }
 
-This code is classic vue code; it uses the MVC model [TODO]
-
+This is the standard vue model: data and operations on data are written in the `<script>` section, and the information needed to dibe
 Run `npm run dev` again; your app should now look like this:
 
 _[TODO - INSERT SCREENSHOT]_
 
 ### Add component
 
-Most apps are made of several components, to allow developpers to compartimentalize and reuse code.:
+Most apps are made of several components, to allow developpers to compartimentalize and reuse code.
 
-_[TODO - INSERT SCREENSHOT]_
-
-We will create a `GroceryItem` component, which will be include a line of text, and a checkbox that crosses the text out when it's clicked.
+We will create a `GroceryItem` component, which will include a line of text, and a checkbox that crosses the text out when it's clicked.
 
 Create a new file in the component folder:
 
@@ -114,11 +124,46 @@ Create a new file in the component folder:
 
 And paste the following code into it:
 
-[TODO]
+<template>
+  <div class="grocery-item" :class="{strike: checked}">
+    <input type=checkbox v-model="checked"></input>
+    {{ name }}
+  </div>
+</template>
+
+<script>
+'use strict'
+
+export default {
+  props: ["name"],
+  data() { return {
+    checked: false
+  }}
+}
+</script>
+
+<style>
+  .strike {
+    text-decoration: line-through;
+  }
+</style>
 
 To include this component in Root.vue, replace the `{{ item_name }}` line with:
 
     <grocery-item :name="item_name" />
+
+and replace the beginning of your `<template>` section with:
+
+    'use strict'      
+
+    import GroceryItem from './components/GroceryItem'
+
+    export default {
+      components: {
+        GroceryItem
+      },
+
+      ...
 
 Run `npm run dev` again; your app should look like this at last:
 
