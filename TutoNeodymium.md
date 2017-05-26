@@ -76,35 +76,38 @@ If you don't understand what a `.vue` file is, single-file component [TODO]
 
 For starters, open `src/Root.vue` and replace the contents of the `<template>` section with the following code (or, alternatively, your own):
 
-    <div id="app">
-      <h1>Groceries</h1>
-      <div id="grocery-list">
-        <p class="grocery-item" v-for="item_name of items">
-          {{ item_name }}
-        </p>
-      </div>
-      <input text />
-      <button>Add item</button>
-    </div>
-
+```
+<div id="app">
+  <h1>Groceries</h1>
+  <div id="grocery-list">
+    <p class="grocery-item" v-for="item_name of items">
+      {{ item_name }}
+    </p>
+  </div>
+  <input text />
+  <button>Add item</button>
+</div>
+```
 Then, replace the contents of the `<script>` section with the following code:
 
-    'use strict'
+```
+'use strict'
 
-    export default {
-      data() { return {
-        items: ["Bread", "Butter", "Milk"],
-        next_item: ""
-      }},
-      methods: {
-        add_item() {
-          if (this.next_item) {
-            this.items.push(this.next_item)
-            this.next_item = "";
-          }
-        }
+export default {
+  data() { return {
+    items: ["Bread", "Butter", "Milk"],
+    next_item: ""
+  }},
+  methods: {
+    add_item() {
+      if (this.next_item) {
+        this.items.push(this.next_item)
+        this.next_item = "";
       }
     }
+  }
+}
+```
 
 This is the standard vue model: data and operations on data are written in the `<script>` section, and the information needed to dibe
 Run `npm run dev` again; your app should now look like this:
@@ -124,6 +127,7 @@ Create a new file in the component folder:
 
 And paste the following code into it:
 
+```
 <template>
   <div class="grocery-item" :class="{strike: checked}">
     <input type=checkbox v-model="checked"></input>
@@ -147,23 +151,29 @@ export default {
     text-decoration: line-through;
   }
 </style>
+```
 
 To include this component in Root.vue, replace the `{{ item_name }}` line with:
 
-    <grocery-item :name="item_name" />
+```
+<grocery-item :name="item_name" />
+```
 
 and replace the beginning of your `<template>` section with:
 
-    'use strict'      
+```
+'use strict'
 
-    import GroceryItem from './components/GroceryItem'
+import GroceryItem from './components/GroceryItem'
 
-    export default {
-      components: {
-        GroceryItem
-      },
+export default {
+  components: {
+    GroceryItem
+  },
 
-      ...
+  data() { return {
+  ...
+```
 
 Run `npm run dev` again; your app should look like this at last:
 
@@ -183,6 +193,4 @@ To build your project into an executable binary file, run:
 
     npm run build
 
-This will create a build in the `releases` folder. Unlike `dev`
-
-TODO - Activer devtools avec build
+This will create a build in the `releases` folder.
