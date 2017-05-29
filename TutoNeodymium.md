@@ -224,3 +224,7 @@ Conclusion
 ----------
 
 You should now have a fully functional Grocery List app.
+
+If you have any questions or remarks, you can contact us through [our website](http://soixantecircuits.fr/), or leave an issue with a `[TUTORIAL]` prefix here on Github.
+
+Good luck with your apps!
