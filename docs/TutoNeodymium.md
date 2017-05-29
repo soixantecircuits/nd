@@ -32,7 +32,7 @@ It will be a simple one-page application, with a list of grocery items. Each ite
 
 The final app should look like this:
 
-![Screenshot - Final version](https://github.com/soixantecircuits/nd/blob/tuto/docs/FinalScreenshot.png)
+![Screenshot - Final version](FinalScreenshot.png)
 
 This tutorial will take you through the process of installing, developping and running this app with nd.
 
@@ -60,7 +60,7 @@ Your project is now installed; for now, it only has a showcase app, with some li
 
     $ npm run dev
 
-![Screenshot - Default app](https://github.com/soixantecircuits/nd/blob/tuto/docs/WelcomeScreenshot.png)
+![Screenshot - Default app](WelcomeScreenshot.png)
 
 
 Making the app
@@ -136,7 +136,7 @@ This is the standard vue model: the code defining data and operations is written
 
 Run `npm run dev` again; your app should now look like this:
 
-![Screenshot - First version](https://github.com/soixantecircuits/nd/blob/tuto/docs/IntermediaryScreenshot.png)
+![Screenshot - First version](IntermediaryScreenshot.png)
 
 ### Add component
 
@@ -201,7 +201,7 @@ export default {
 
 Run `npm run dev` again; your app should look like this at last:
 
-![Screenshot - Final version](https://github.com/soixantecircuits/nd/blob/tuto/docs/FinalScreenshot.png)
+![Screenshot - Final version](FinalScreenshot.png)
 
 
 Build and test

@@ -3,6 +3,9 @@
 ## Introduction
 
 Neodymium stack is targeted towards single page applications with [state management](http://vuex.vuejs.org/en/intro.html) and support for [Electron](http://electron.atom.io/).
+
+You can read the [tutorial for first-time users](TutoNeodymium.nd) to get started.
+
 In order to fully enjoy working with the nd stack, you **need** to have read these docs ~~entirely~~ 🤓, preferably in that order:
 
 - [ES2015 syntax](https://babeljs.io/docs/learn-es2015/)
