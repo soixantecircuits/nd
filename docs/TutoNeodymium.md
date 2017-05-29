@@ -102,12 +102,10 @@ For starters, open `src/Root.vue` and replace the contents of the `<template>` s
 <div id="app">
   <h1>Groceries</h1>
   <div id="grocery-list">
-    <p class="grocery-item" v-for="item_name of items">
-      {{ item_name }}
-    </p>
+    <p class="grocery-item" v-for="item_name of items"> {{ item_name }} </p>
   </div>
-  <input text />
-  <button>Add item</button>
+  <input v-model="next_item" />
+  <button @click="add_item()">Add item</button>
 </div>
 ```
 
@@ -177,13 +175,7 @@ export default {
 </style>
 ```
 
-To include this component in `Root.vue`, replace the `{{ item_name }}` line with:
-
-```
-<grocery-item :name="item_name" />
-```
-
-and replace the beginning of your `<template>` section with:
+To include this component in `Root.vue`, replace the contents of the `<script>` section with
 
 ```
 'use strict'
@@ -194,9 +186,31 @@ export default {
   components: {
     GroceryItem
   },
-
   data() { return {
-  ...
+    items: ["Bread", "Butter", "Milk"],
+    next_item: ""
+  }},
+  methods: {
+    add_item() {
+      if (this.next_item) {
+        this.items.push(this.next_item)
+        this.next_item = "";
+      }
+    }
+  }
+}
+```
+
+and in the `<template>` section, replace the following line:
+
+```
+<p class="grocery-item" v-for="item_name of items"> {{ item_name }} </p>
+```
+
+with:
+
+```
+<grocery-item v-for="item_name of items" :name="item_name" />
 ```
 
 Run `npm run dev` again; your app should look like this at last:
