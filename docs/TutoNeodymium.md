@@ -217,6 +217,49 @@ Run `npm run dev` again; your app should look like this at last:
 
 ![Screenshot - Final version](FinalScreenshot.png)
 
+### Component syntax
+
+If you're not familiar with Vue components, this part of the previous code probably seemed strange to you:
+
+```
+components: {
+  GroceryItem
+},
+```
+
+There are several concepts in play behind this piece of code:
+
+* [Local Component Registration](https://vuejs.org/v2/guide/components.html#Local-Registration): We're passing a `components` parameter to the component exported by `Root.vue`. This allows it to recognize the content of `components` by name.
+
+* [ES6 Propert shorthand](http://es6-features.org/#PropertyShorthand): Using `GroceryItem` alone in an object declaration is equivalent to writing `"GroceryItem": GroceryItem`.
+
+* [Kebab Case Convention](https://vuejs.org/v2/guide/components.html#Component-Naming-Conventions): The GroceryItem tag in the `<template>` section is named `<grocery-item>`, which is the kebab-case version of the name. While it could be written as `<GroceryItem>` (that is, in CamelCase), the kebab-case version is closer to HTML convention. To accomodate that, Vue automatically "translates" CamelCase to kebab-case.
+
+So the following code:
+
+```
+components: {
+  GroceryItem
+},
+```
+
+is equivalent to
+
+```
+components: {
+  "GroceryItem": GroceryItem
+},
+```
+
+and
+
+```
+components: {
+  "grocery-item": GroceryItem
+},
+```
+
+which tells Vue "the `<grocery-item>` tags in my template are to be replaced with the component `GroceryItem`".
 
 Build and test
 --------------
