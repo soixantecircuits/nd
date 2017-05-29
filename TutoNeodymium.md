@@ -14,7 +14,7 @@ It will be a simple one-page application, with a list of grocery items. Each ite
 
 The final app should look like this:
 
-_[TODO - INSERT SCREENSHOT]_
+![Screenshot - Final version](https://github.com/soixantecircuits/nd/blob/tuto/docs/FinalScreenshot.png)
 
 ### [TODO] Major dependencies
 
@@ -48,7 +48,7 @@ Your project is now installed; for now, it only has a showcase app, with some li
 
     $ npm run dev
 
-_[TODO - INSERT SCREENSHOT]_
+![Screenshot - Default app](https://github.com/soixantecircuits/nd/blob/tuto/docs/WelcomeScreenshot.png)
 
 
 Making the app
@@ -88,6 +88,7 @@ For starters, open `src/Root.vue` and replace the contents of the `<template>` s
   <button>Add item</button>
 </div>
 ```
+
 Then, replace the contents of the `<script>` section with the following code:
 
 ```
@@ -112,7 +113,7 @@ export default {
 This is the standard vue model: data and operations on data are written in the `<script>` section, and the information needed to dibe
 Run `npm run dev` again; your app should now look like this:
 
-_[TODO - INSERT SCREENSHOT]_
+![Screenshot - First version](https://github.com/soixantecircuits/nd/blob/tuto/docs/IntermediaryScreenshot.png)
 
 ### Add component
 
@@ -177,7 +178,7 @@ export default {
 
 Run `npm run dev` again; your app should look like this at last:
 
-_[TODO - INSERT SCREENSHOT]_
+![Screenshot - Final version](https://github.com/soixantecircuits/nd/blob/tuto/docs/FinalScreenshot.png)
 
 
 Build and test
