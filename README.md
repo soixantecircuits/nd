@@ -11,7 +11,7 @@ A full-featured neodymium stack setup.
 
 ## Documentation
 
-The main tutorial can be found [here](docs/TutoNeodymium.nd).
+The main tutorial can be found [here](docs/TutoNeodymium.md).
 
 Common topics are discussed in the [docs](http://soixantecircuits.github.io/nd). Make sure to read it!
 
