@@ -8,7 +8,7 @@ Neodymium (or nd for short) is a project template for a Node.js + HTML + CSS app
 
 * `npm` or `yarn`, to install your application, tools and dependencies
 
-* [Vue.js](https://vuejs.org/v2/guide/): the Model-View engine which generates your HTML code at runtime.
+* [Vue.js](https://vuejs.org/v2/guide/): the engine which generates your HTML code at runtime.
 
 * [Webpack 2](https://webpack.js.org/): the server-side build tool that bundles your application into something your browser can read.
 
@@ -18,7 +18,7 @@ Neodymium (or nd for short) is a project template for a Node.js + HTML + CSS app
 
 * [eslint](http://eslint.org/): the linter which you can use to point out probable mistakes in your code.
 
-To understand this tutorial, you need to be familiar with Node.js and its tools (at the very least, `npm`), and with Vue.js (read at least the official tutorial). Being familiar with Webpack and electron and the other tools is a plus, but not necessary.
+To understand this tutorial, you need to be familiar with Node.js and its tools (at the very least, `npm`), and with Vue.js (read at least the official tutorial). Being familiar with Webpack and electron and the other tools is a plus, but isn't necessary.
 
 The aim of nd is to simplify making a Webpack application: in theory, all you have to do is provide nd with a few custom attributes (project name, description), and let it take care of the boilerplate code for you.
 
@@ -26,9 +26,9 @@ In practice, you may need to look at the boilerplate code at some point to under
 
 ### Our first app
 
-For this tutorial, we will develop a basic "Grocery List" app.
+For this tutorial, we will develop a basic "Grocery List" app with nd.
 
-It will be a simple one-page application, with a list of grocery items. Each item will be made of a checkbox, and a line of text which will be crossed out when the box is checked. Below all items, there will be a text input zone and a button to add more items.
+It will be a simple one-page application (that is, a single webpage with no links), with a list of grocery items. Each item will be made of a checkbox, and a line of text which will be crossed out when the box is checked. Below all items, there will be a text input zone and a button to add more items.
 
 The final app should look like this:
 
@@ -274,7 +274,7 @@ To build your project into an executable binary file, run:
 
     npm run build
 
-This will create a build in the `releases` folder.
+This will create a build folder named  `/releases/my-grocery-list-MY_OS_VERSION`, with a `my-grocery-list` binary executable. Running this executable will open your application in a fullscreen window. Since we haven't coded an 'Exit' button in, you can exit the app with `Alt+F4`, or any equivalent method.
 
 
 Conclusion
