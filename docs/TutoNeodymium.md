@@ -18,9 +18,9 @@ Neodymium (or nd for short) is a project template for a Node.js + HTML + CSS app
 
 * [eslint](http://eslint.org/): the linter which you can use to point out probable mistakes in your code.
 
-To understand this tutorial, you need to be familiar with Node.js and its tools (at the very least, `npm`), and with Vue.js (read at least the official tutorial). Being familiar with webpack and electron and the other tools is a plus, but not necessary.
+To understand this tutorial, you need to be familiar with Node.js and its tools (at the very least, `npm`), and with Vue.js (read at least the official tutorial). Being familiar with Webpack and electron and the other tools is a plus, but not necessary.
 
-The aim of nd is to simplify making a webpack application: in theory, all you have to do is provide nd with a few custom attributes (project name, description), and let it take care of the boilerplate code for you.
+The aim of nd is to simplify making a Webpack application: in theory, all you have to do is provide nd with a few custom attributes (project name, description), and let it take care of the boilerplate code for you.
 
 In practice, you may need to look at the boilerplate code at some point to understand how your project is built.
 
@@ -74,7 +74,7 @@ Well, the pipeline is somewhat convoluted, but it goes like this:
 
 * First, `npm run dev` reads the `package.json` objects, looks for the `scripts.dev` string, and runs it, which runs `node build/dev-server.js`
 
-* `dev-server.js` is a complex file; but the gist of it is, it runs a webpack server and an electron client; the server sends `index.html` and `src/main.js` to the client
+* `dev-server.js` is a complex file; but the gist of it is, it runs a Webpack server and an electron client; the server sends `index.html` and `src/main.js` to the client
 
 * `src/main.js` replaces the HTML element with id "app" in `index.html` with the components `src/components/App.vue`
 
@@ -86,9 +86,9 @@ If you didn't understand everything, don't worry. You only need to remember that
 
 If you aren't familiar with Webpack, the presence of `.vue` files may surprise you. How do they fit into the project?
 
-A Webpack application is not exclusively made of `.html` and `.js` files. Webpack allows you to define custom extensions, and to associate loaders to them. By default, a wepack project would not recognize `.vue` files; however, Neodymium configures webpack (in `build/webpack.base.conf.js`, if you're curious) to detect `.vue` files, and run the `vue-loader` plugin on them every time they're imported through `require` or `import`.
+A Webpack application is not exclusively made of `.html` and `.js` files. Webpack allows you to define custom extensions, and to associate loaders to them. By default, a wepack project would not recognize `.vue` files; however, Neodymium configures Webpack (in `build/webpack.base.conf.js`, if you're curious) to detect `.vue` files, and run the `vue-loader` plugin on them every time they're imported through `require` or `import`.
 
-For instance, in `Root.vue`, the line `import Counter from './components/Counter'` is actually parsed by webpack, which detects the `src/components/Counter.vue` file, runs `vue-loader` on it, and stores the result in the `Counter` object in the `Root.vue` script.
+For instance, in `Root.vue`, the line `import Counter from './components/Counter'` is actually parsed by Webpack, which detects the `src/components/Counter.vue` file, runs `vue-loader` on it, and stores the result in the `Counter` object in the `Root.vue` script.
 
 Each `.vue` file represents a Vue-js component, as if it were created by the `Vue.component` method, with the contents of the `<template>` tag as its `template` parameter, and the object exported inside the `<script>` tags as its other parameters. The content of the `<style>` tags, however, is applied to the entire application (which may be a source of confusing mistakes).
 
