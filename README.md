@@ -1,6 +1,10 @@
-# neodymium template
+# Neodymium template
 
-A full-featured neodymium stack setup.
+Neodymium (or nd for short) is a project template for an [Electron](https://electron.atom.io/) application.
+
+A project generated with nd uses, among other tools, Node.js, [Vue.js](https://vuejs.org/v2/guide/), [Webpack 2](https://webpack.js.org/), [vue-cli](https://github.com/vuejs/vue-cli) and [ESLint](http://eslint.org/) to create an Electron application.
+
+Nd sets up these tools and takes care of their settings for you so you can start making your app without worrying about the boilerplate.
 
 [![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 
@@ -13,7 +17,7 @@ A full-featured neodymium stack setup.
 
 The main tutorial can be found [here](docs/TutoNeodymium.md).
 
-Common topics are discussed in the [docs](http://soixantecircuits.github.io/nd). Make sure to read it!
+Common topics are discussed in [the documentation](http://soixantecircuits.github.io/nd). Make sure to read it!
 
 ## Usage
 
@@ -53,14 +57,17 @@ If your app is built for electron and you want to use devtools, simply define a 
   - Source maps
   - Autorun `npm run electron` in Electron enabled apps.
 
+
 - `npm run build`: Production ready build.
   - JavaScript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2).
   - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
   - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
   - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
 
+
 - `npm run electron`: developpers friendly features when working in a dev environment.
   - Auto opens the devtools.
+
 
 - `npm run package`: Package your app for distribution with [electron-packager](https://github.com/electron-userland/electron-packager).
   - Portable version of your app (NodeJS and WebKit embedded).
@@ -79,4 +86,4 @@ vue init username/repo my-project
 
 This is originally a fork of the [webpack](https://github.com/vuejs-templates/webpack) template. Most credit goes to them! 👏
 
-The neodymium stack was originally designed as a yeoman generator. You can take a look [here](https://github.com/soixantecircuits/neodymium).
+The neodymium stack was originally designed as a yeoman generator. It is no longer available.
