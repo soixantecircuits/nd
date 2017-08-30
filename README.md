@@ -1,3 +1,9 @@
+# ❗️DEPRECATED ❗️
+
+USE **[soixantecircuits electron-vue](https://github.com/soixantecircuits/electron-vue)** 
+
+# ❗️DEPRECATED ❗️
+
 # Neodymium template
 
 Neodymium (or nd for short) is a project template for an [Electron](https://electron.atom.io/) application.
